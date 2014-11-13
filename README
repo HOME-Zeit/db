@@ -1,0 +1,13 @@
+als Beispiel: https://github.com/HOME-Zeit/db/blob/master/Test.java
+
+Datenbank.ausgeben(true oder false) gibt alle Programminmformationen zurück
+Datenbank.ausgeben(Long zeit, true oder false) gibt alle Programminformationen 4 Stunden vor und 20 Stunden nach "zeit" zurück, zeit in ms
+Datenbank.ausgeben(Integer nummer, true oder false) gibt Datenbank eintrag mit der nummer zurück, also einen bestimmten
+true wenn Exceptions ausgegeben werden sollen, false wenn nicht
+
+Datenbank.eintragen(Programminformation p) trägt p in die Datenbank ein
+p.nummer ist egal, wird selber hochgezählt
+
+Datenbank.löschen(Programminformation p) löscht p aus der Datenbank
+
+Datenbank.bearbeiten(Programminformation p) überschreibt p
