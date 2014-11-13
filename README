@@ -11,3 +11,9 @@ p.nummer ist egal, wird selber hochgezählt
 Datenbank.löschen(Programminformation p) löscht p aus der Datenbank
 
 Datenbank.bearbeiten(Programminformation p) überschreibt p
+
+
+
+
+
+zum Testen für Datenbank: https://www.apachefriends.org/de/download.html
