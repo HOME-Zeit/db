@@ -132,7 +132,7 @@ public class Datenbank
 	
 	
 	
-	static public ArrayList<Programminformation> ausgeben(Programminformation p, boolean exceptionAnzeigen)
+	static public ArrayList<Programminformation> ausgeben(Integer nummer, boolean exceptionAnzeigen)
 	{
 		ArrayList<Programminformation> programminformation = new ArrayList<Programminformation>();
 		try 
@@ -141,7 +141,7 @@ public class Datenbank
 			connection = DriverManager.getConnection(url + "/" + db, user, pwd);
             Statement statement = connection.createStatement();            
   
-            ResultSet ergebnis = statement.executeQuery("SELECT * FROM " + tabelle_1 + " WHERE nummer = " + p.nummer + " ORDER by startzeit");
+            ResultSet ergebnis = statement.executeQuery("SELECT * FROM " + tabelle_1 + " WHERE nummer = " + nummer + " ORDER by startzeit");
             while(ergebnis.next())
             {                        		           	           		           	            	       	
             	programminformation.add(new Programminformation(ergebnis.getInt("nummer"), ergebnis.getString("titel"), 
