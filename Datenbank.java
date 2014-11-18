@@ -55,7 +55,7 @@ public class Datenbank
             {                        		           	           		           	            	       	
             	programminformation.add(new Programminformation(ergebnis.getInt("nummer"), ergebnis.getString("titel"), 
             														new Long(ergebnis.getLong("startzeit")), new Long(ergebnis.getLong("endzeit")), 
-            														ergebnis.getString("vorname"), ergebnis.getString("nachname"), 
+            														ergebnis.getString("prod_verantwortlicher"), ergebnis.getString("sende_verantwortlicher"), 
             														new Long(ergebnis.getLong("reale_startzeit")), new Long(ergebnis.getLong("reale_endzeit"))));
             	
             }                                
@@ -101,9 +101,9 @@ public class Datenbank
             while(ergebnis.next())
             {                        		           	           		           	            	       	
             	programminformation.add(new Programminformation(ergebnis.getInt("nummer"), ergebnis.getString("titel"), 
-																	new Long(ergebnis.getLong("startzeit")), new Long(ergebnis.getLong("endzeit")), 
-																	ergebnis.getString("vorname"), ergebnis.getString("nachname"), 
-																	new Long(ergebnis.getLong("reale_startzeit")), new Long(ergebnis.getLong("reale_endzeit"))));
+						new Long(ergebnis.getLong("startzeit")), new Long(ergebnis.getLong("endzeit")), 
+						ergebnis.getString("prod_verantwortlicher"), ergebnis.getString("sende_verantwortlicher"), 
+						new Long(ergebnis.getLong("reale_startzeit")), new Long(ergebnis.getLong("reale_endzeit"))));
             	
             }                                
             ergebnis.close();
@@ -145,9 +145,9 @@ public class Datenbank
             while(ergebnis.next())
             {                        		           	           		           	            	       	
             	programminformation.add(new Programminformation(ergebnis.getInt("nummer"), ergebnis.getString("titel"), 
-																	new Long(ergebnis.getLong("startzeit")), new Long(ergebnis.getLong("endzeit")), 
-																	ergebnis.getString("vorname"), ergebnis.getString("nachname"), 
-																	new Long(ergebnis.getLong("reale_startzeit")), new Long(ergebnis.getLong("reale_endzeit"))));
+						new Long(ergebnis.getLong("startzeit")), new Long(ergebnis.getLong("endzeit")), 
+						ergebnis.getString("prod_verantwortlicher"), ergebnis.getString("sende_verantwortlicher"), 
+						new Long(ergebnis.getLong("reale_startzeit")), new Long(ergebnis.getLong("reale_endzeit"))));
             	
             }                                
             ergebnis.close();
@@ -187,8 +187,8 @@ public class Datenbank
             Statement statement = connection.createStatement();   
                         
             statement.executeUpdate("INSERT INTO " + tabelle_1 + " VALUES (0,'" + p.titel + "'," + p.startzeit + "," +
-            																	p.endzeit + ",'" + p.vorname + "','" + 
-            																	p.nachname +  "'," + p.reale_startzeit + 
+            																	p.endzeit + ",'" + p.prod_verantwortlicher + "','" + 
+            																	p.sende_verantwortlicher +  "'," + p.reale_startzeit + 
             																	"," + p.reale_endzeit + ")");
             statement.close();
             connection.close();  
@@ -225,8 +225,8 @@ public class Datenbank
             Statement statement = connection.createStatement();   
                         
             statement.executeUpdate("UPDATE " + tabelle_1 + " SET titel = '" + p.titel + "', startzeit = " + p.startzeit + ", endzeit  = " +
-            																	p.endzeit + ",vorname = '" + p.vorname + "', nachname = '" + 
-            																	p.nachname +  "', reale_startzeit = " +
+            																	p.endzeit + ",prod_verantwortlicher = '" + p.prod_verantwortlicher + "', sende_verantwortlicher = '" + 
+            																	p.sende_verantwortlicher +  "', reale_startzeit = " +
             																	p.reale_startzeit + ", reale_endzeit = " + p.reale_endzeit +
             																	" WHERE nummer = " + p.nummer);
 
